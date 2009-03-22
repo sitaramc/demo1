@@ -5,5 +5,16 @@ exec 2>/dev/null
 
 cp -a external/cobbler cobbler
 cd cobbler && find .git -type d | grep remotes | xargs rm -rf
-git branch -r -d origin/master
-git branch -r -d origin/devel
+for rb in $(git branch -r)
+do
+    git branch -r -d $rb
+done
+
+# clamp master at 254c8d1; demo 7 (at least) suffers otherwise
+# this is caused by the fact that I created this demo with a clone from 2008
+# March or so.  Since cobbler is *not* the main thing in the demo, I never
+# kept it uptodate, and the demos have grown around that version.  So kill
+# everything after that point in time
+git checkout master
+git reset --hard 254c8d1
+git tag -d $(git tag)
