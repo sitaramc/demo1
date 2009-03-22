@@ -4,11 +4,9 @@ exec >/dev/null
 exec 2>/dev/null
 
 cp -a external/cobbler cobbler
-cd cobbler && find .git -type d | grep remotes | xargs rm -rf
-for rb in $(git branch -r)
-do
-    git branch -r -d $rb
-done
+cd cobbler
+git branch -r -d $(git branch -r)
+
 
 # newer versions of git show a warning here that is irrelevantly confusing,
 # because in this demo I do not deal with bare versus non-bare repos.  Squelch
