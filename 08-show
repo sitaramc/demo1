@@ -1,0 +1,13 @@
+^head -4 ./02-clone | sed -e 's/^^//' | sh      # pre-requisite
+^cd cobbler-clone
+
+git log
+git show
+
+git show HEAD~3
+
+git show CHANGELOG
+git show HEAD:CHANGELOG
+git show HEAD~4:CHANGELOG
+
+# or you can say:    git show v2.5file.c

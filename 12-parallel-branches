@@ -1,0 +1,33 @@
+^head -4 ./02-clone | sed -e 's/^^//' | sh      # pre-requisite
+
+cd cobbler
+^git config receive.denyCurrentBranch warn
+^git status
+
+#gitk --all
+
+^gitk --all &        # this is on the origin server
+
+ls -al > orig-file1; git add orig-file1; git commit -m orig-file1-added
+ls -al > orig-file2; git add orig-file2; git commit -m orig-file2-added
+ls -al > orig-file3; git add orig-file3; git commit -m orig-file3-added
+
+cd ../cobbler-clone
+
+#gitk --all
+
+^gitk --all &        # this is on our clone
+
+ls -al > file1; git add file1; git commit -m file1-added
+ls -al > file2; git add file2; git commit -m file2-added
+ls -al > file3; git add file3; git commit -m file3-added
+ls -al > file4; git add file4; git commit -m file4-added
+
+#^cd ../cobbler-clone
+
+git push
+git pull
+git push
+^cd ../cobbler
+^git reset --hard HEAD
+^cd ../cobbler-clone

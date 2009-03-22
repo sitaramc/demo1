@@ -1,0 +1,13 @@
+^rm -rf sampleproj; cp -a sampleproj.save sampleproj
+^pwd; cd sampleproj;  clear; pwd
+ls -al
+make
+ls -al
+./hello     # testing
+git init
+git status
+echo hello > .gitignore
+git status
+git add .
+git status
+git commit -m "first commit"

@@ -1,0 +1,7 @@
+^rm -rf cobbler
+^cp -a external/cobbler cobbler
+
+^cd cobbler
+^git --no-pager status &>/dev/null
+gitk 5c199
+gitk 5c199 --date-order

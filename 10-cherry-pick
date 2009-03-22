@@ -1,0 +1,11 @@
+^head -4 ./02-clone | sed -e 's/^^//' | sh      # pre-requisite
+^cd cobbler-clone
+
+^gitk --all &
+git checkout -b dev
+^ls -al > file1; git add file1; git commit -m file1-added
+^ls -al > file2; git add file2; git commit -m file2-added
+^ls -al > file3; git add file3; git commit -m file3-added
+^ls -al > file4; git add file4; git commit -m file4-added
+
+git checkout master

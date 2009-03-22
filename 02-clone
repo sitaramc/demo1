@@ -1,0 +1,8 @@
+^rm -rf cobbler cobbler-clone
+^./02helper
+git clone file://$PWD/cobbler cobbler-clone
+cd cobbler-clone
+
+ls -al
+git pull
+git push

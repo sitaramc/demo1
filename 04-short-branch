@@ -1,0 +1,5 @@
+^rm -rf cobbler
+^cp -a external/cobbler cobbler
+
+^cd cobbler
+^gitk 454e

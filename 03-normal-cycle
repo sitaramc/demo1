@@ -1,0 +1,16 @@
+^head -4 ./02-clone | sed -e 's/^^//' | sh      # pre-requisite
+^cd cobbler-clone
+
+vim README
+vim some-new-file
+git --no-pager diff
+git status
+git add README
+git status
+
+gvim -p setup.py AUTHORS Makefile
+git gui # use this to commit
+git status
+git show
+
+git push

@@ -1,0 +1,20 @@
+^head -4 ./02-clone | sed -e 's/^^//' | sh      # pre-requisite
+^cd cobbler-clone
+
+^gitk --all &
+git tag at-start
+git checkout -b dev1            # first developer
+perl -pi -e 's/$/0/ if / = \d+$/; s/3.2.4/3.2.6/'  cobbler/api.py
+git gui     # please commit from the GUI
+
+git checkout -b dev2 master      # second developer
+perl -pi -e 's/_,/_ABC_,/; $_=uc($_) if /def log/../^$/' cobbler/api.py
+# git diff
+mv cobbler/api.py cobbler/modules/api_mod.py
+# git status
+git gui     # please stage, then commit from the GUI
+
+git checkout master             # main trunk
+git merge dev2                  # order doesn't matter actually
+git merge dev1
+# git diff -C at-start..HEAD

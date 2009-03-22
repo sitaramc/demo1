@@ -1,0 +1,14 @@
+^head -4 ./02-clone | sed -e 's/^^//' | sh      # pre-requisite
+^cd cobbler-clone
+
+^gitk &
+^read -p ok?
+^ls -al > file1; git add file1; git commit -m file1-added
+^ls -al > file2; git add file2; git commit -m file2-added
+^ls -al > file3; git add file3; git commit -m file3-added
+^ls -al > file4; git add file4; git commit -m file4-added
+^ls -al > file5; git add file5; git commit -m file5-added
+^ls -al > file6; git add file6; git commit -m file6-added
+
+git rebase -i HEAD~6
+# ^bash

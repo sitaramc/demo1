@@ -1,0 +1,3 @@
+^cd external/long-branch-example
+
+^gitk --all --date-order &

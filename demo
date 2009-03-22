@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[ -f $1-* ] || exit 1
+echo ============= $1-* ==============
+
+runcmd() { [ "$ans" == "n" ] || "$@"; }
+perl -pe 's/.*/echo;read -s -n 1 -p "$&" ans\necho\nruncmd $&/ if /./ and /^[^^# ]/;
+          s/^\^//;' < $1-* > run.out
+. ./run.out
