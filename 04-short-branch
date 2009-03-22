@@ -2,4 +2,4 @@
 ^cp -a external/cobbler cobbler
 
 ^cd cobbler
-^gitk 454e
+^gitk 454e6d9

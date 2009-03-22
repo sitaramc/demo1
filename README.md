@@ -128,7 +128,10 @@ one.
 
 #### 07-log
 
-This just shows various `git log` options.
+This just shows various `git log` options.  The two commands showing log
+"since a certain date" and "...date+time" may or may not show different things
+based on your time zone.  In India, where I live, the former one shows one
+extra commit.
 
 #### 08-show
 

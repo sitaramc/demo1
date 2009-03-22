@@ -3,6 +3,9 @@
 git clone file://$PWD/cobbler cobbler-clone
 cd cobbler-clone
 
+^# WARNING: DO NOT CHANGE THE FIRST 4 LINES OF THIS DEMO!
+^# (they are used by other demos... hey I already told you it'a a kludge!)
+
 ls -al
 git pull
 git push

@@ -3,5 +3,5 @@
 
 ^cd cobbler
 ^git --no-pager status &>/dev/null
-gitk 5c199
-gitk 5c199 --date-order
+gitk 5c19902
+gitk 5c19902 --date-order
